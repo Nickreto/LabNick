@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="FirstIonideProject">
+    <resource name="FSharpSignatureData.FirstIonideProject" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.FirstIonideProject" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.FirstIonideProject" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.FirstIonideProject" action="remove"></resource>
+    <resource name="FSharpOptimizationData.FirstIonideProject" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.FirstIonideProject" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.FirstIonideProject" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.FirstIonideProject" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.FirstIonideProject" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.FirstIonideProject" action="remove"></resource>
+  </assembly>
+</linker>

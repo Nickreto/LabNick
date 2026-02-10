@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "r0FJqIWF1E0=",
+  "success": true,
+  "projectFilePath": "/home/nick/Документы/4_sem/LP/FirstIonideProject/FirstIonideProject.fsproj",
+  "expectedPackageFiles": [
+    "/home/nick/.nuget/packages/fsharp.core/10.0.101/fsharp.core.10.0.101.nupkg.sha512"
+  ],
+  "logs": []
+}
