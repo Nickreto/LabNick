@@ -58,7 +58,19 @@ let rec FindElement list element num=
     | head::tail -> (FindElement tail element (num+1))
         
 
-    
+let rec NOD num1 num2 =
+    printfn "%i - %i = %i" num1 num2 (num1-num2)
+    if (num1-num2=0) then 
+        0
+    elif (num1 - num2 < num2) then 
+        NOD num2 (num1-num2)
+    elif (num1 - num2 > num2) then
+        NOD (num1-num2) num2
+    else
+        num2
+
+
+
 let task1 _ =
     printf "Введите количество элементов: "
     let N = CheckNumNat (int (Console.ReadLine()))
@@ -93,6 +105,14 @@ let task3 _ =
     printf "Найденный элемент: %s" (FindByNum list n)
     0
 
+let task4 _ =
+    printf "Enter num1: "
+    let n1 = int(Console.ReadLine())
+    printf "Enter num2: "
+    let n2 = int(Console.ReadLine())
+    printfn "NOD: %i" (NOD n1 n2)
+    0
+
 [<EntryPoint>]
 let main _ =
     printfn "Выберите программу введя её номер"
@@ -106,5 +126,7 @@ let main _ =
         task2 1
     else if (task = 3) then
         task3 1
+    else if (task = 4) then
+        task4 1
     else
     0
