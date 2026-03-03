@@ -19,6 +19,9 @@
 
 ![Image alt](https://github.com/Nickreto/LabNick/blob/main/Images/Task1Test1.png)
 
+![Image alt](https://github.com/Nickreto/LabNick/blob/main/Images/Task1Test2.png)
+
+
 # Задание 2 List.map
 
 ## Задача 1
@@ -38,3 +41,6 @@
 ### Тесты
 
 ![Image alt](https://github.com/Nickreto/LabNick/blob/main/Images/Task2Test1.png)
+
+![Image alt](https://github.com/Nickreto/LabNick/blob/main/Images/Task2Test2.png)
+
