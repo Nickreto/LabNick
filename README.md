@@ -1,6 +1,6 @@
 # Липин Никита БАС1 Лабораторная No1
 
-# Задание 1 List.fold
+# Задание 1 Seq.fold
 
 ## Задача 1
 
@@ -22,7 +22,7 @@
 ![Image alt](https://github.com/Nickreto/LabNick/blob/main/Images/Task1Test2.png)
 
 
-# Задание 2 List.map
+# Задание 2 Seq.map
 
 ## Задача 1
 
