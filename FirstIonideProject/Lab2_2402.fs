@@ -35,16 +35,16 @@ let rec isNumIn element num=
         else 
             0
 
+
+
 let LenghtOfString (strin:string) =
     strin.Length
 
 //Если num(цифра) встречается в element, то складываем в sum
 let sumElementIfNum sum element num=
     if (isNumIn element num) = 1 then 
-        printfn "Goida %i" element
         sum + element
     else 
-        printfn "NeGoida %i" element
         sum
 
 let task1 _ =
@@ -53,8 +53,8 @@ let task1 _ =
     let list = EnterWords N 
     //Создание списка длин строк другого списка
     printfn "Введённый вами список слов: %A" list
-    let lena = list |> List.map LenghtOfString
-    printf "Список длин слов: %A" lena
+    let lenlist = list |> List.map LenghtOfString
+    printf "Список длин слов: %A" lenlist
     0
 
 let task2 _ =
