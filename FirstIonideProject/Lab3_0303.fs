@@ -1,8 +1,5 @@
 open System
 open System.IO
-
-let Sum = 1+1
-
 //Функция обработки количества элементов
 let EnterCount _=
     printf "Введите количество элементов: "
@@ -18,10 +15,24 @@ let EnterCount _=
         printfn "Error: %s" ex.Message
         -1
 
+let CheckForNum _=
+    try 
+        let count = int (Console.ReadLine())
+        count
+    with
+    | ex ->
+        printfn "Error: %s" ex.Message
+        0
+
 let EnterElementsNums count= seq [
     for i in 1 .. count do
         printf "Введите число: "
-        yield int (Console.ReadLine())
+        try
+            let inp = int (CheckForNum 1)
+            yield inp
+        with
+        | ex ->
+            printfn "Error: %s" ex.Message
 ]
 
 let EnterElementsString count= seq [
@@ -79,16 +90,21 @@ let findMax max element =
     else
         max
 
+let ExitEnter _ =
+    printfn "Enter to continue"
+    Console.ReadLine()
+    0
+
 let task1 _ =
     let count = EnterCount 1
     let sequens = EnterElementsString count
     if count > 0 then
-        printfn "output: %A" sequens
+        printfn "output: %A" (Seq.toList sequens)
         let lenOfElements = sequens |> Seq.map(LenghtofString)
-        printfn "len of items in seq: %A" lenOfElements
-        0
+        printfn "len of items in seq: %A" (Seq.toList lenOfElements)
+        ExitEnter 1
     else 
-        0
+        ExitEnter 1
 
 let task2 _ =
     let count = EnterCount 1
@@ -98,7 +114,7 @@ let task2 _ =
     let sequens = EnterElementsNums count
     printfn "Введите цифру для поиска: "
     let findNum = int (Console.ReadLine())
-    printfn "output: %A" sequens
+    printfn "output: %A" (Seq.toList sequens)
     let sum = 
         Seq.fold 
             (fun acc element-> 
@@ -106,7 +122,7 @@ let task2 _ =
             0
             sequens
     printfn "%i" sum
-    0
+    ExitEnter 1
 
 let enterWay way =
     try 
@@ -146,15 +162,15 @@ let task3 _ =
         printfn "Максимальная длина файла: %i" (maxx-lenOfWay)
     else 
         printf ""
-    0
+    ExitEnter 1
 
-[<EntryPoint>]
-let main _ =
+let body _ =
     printf 
         """Выберите программу введя её номер
-Задание 1 seq.map
-Задание 2 seq.fold
-Задание 3 Work with files
+Задание 1 seq.map: 1
+Задание 2 seq.fold: 2
+Задание 3 Work with files: 3
+Выйти из программы: -1
 Ввод:"""
     let task = int (Console.ReadLine())
     if task = 1 then
@@ -163,5 +179,16 @@ let main _ =
         task2 1
     elif task = 3 then
         task3 1
+    elif task = -1 then
+        Environment.Exit(0)
+        0
     else
+        0
+        
+    
+
+[<EntryPoint>]
+let main _ =
+    while (1=1) do
+        body 1
     0
