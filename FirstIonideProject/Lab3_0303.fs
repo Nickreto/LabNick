@@ -22,7 +22,7 @@ let CheckForNum _=
     with
     | ex ->
         printfn "Error: %s" ex.Message
-        0
+        -10
 
 let EnterElementsNums count= seq [
     for i in 1 .. count do
@@ -113,16 +113,20 @@ let task2 _ =
     else 
     let sequens = EnterElementsNums count
     printfn "Введите цифру для поиска: "
-    let findNum = int (Console.ReadLine())
-    printfn "output: %A" (Seq.toList sequens)
-    let sum = 
-        Seq.fold 
-            (fun acc element-> 
-                sumElementIfNum acc element count)
-            0
-            sequens
-    printfn "%i" sum
-    ExitEnter 1
+    let findNum = CheckForNum 1
+    if (findNum >= 0)&&(findNum < 10) then
+        printfn "output: %A" (Seq.toList sequens)
+        let sum = 
+            Seq.fold 
+                (fun acc element-> 
+                    sumElementIfNum acc element findNum)
+                0
+                sequens
+        printfn "%i" sum
+        ExitEnter 1
+    else 
+        printfn "Ошибка ввода"
+        ExitEnter 1
 
 let enterWay way =
     try 
