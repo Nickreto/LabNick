@@ -24,7 +24,7 @@ let CheckForNum _=
         printfn "Error: %s" ex.Message
         -10
 
-let EnterElementsNums count= seq [
+let EnterElementsNums count= seq {
     for i in 1 .. count do
         printf "Введите число: "
         try
@@ -33,13 +33,13 @@ let EnterElementsNums count= seq [
         with
         | ex ->
             printfn "Error: %s" ex.Message
-]
+}
 
-let EnterElementsString count= seq [
+let EnterElementsString count= seq {
     for i in 1 .. count do
         printf "Введите слово: "
         yield string (Console.ReadLine())
-]
+}
 
 let rec isNumIn element num=
     if not (element/10 = 0) then
@@ -72,16 +72,12 @@ let LenghtofString (element:String) =
 let rec allFiles root =
     seq {
         try 
-            //printfn "AllFiles"
-            //for dir in Directory.EnumerateDirectories(root) do
-            //    yield! allFiles dir
             yield! Directory.EnumerateFiles(root)
             yield! Directory.EnumerateDirectories(root)
         with
             |ex ->
             printfn "Error: %s" ex.Message
             yield ""
-
     }
 
 let findMax max element =
@@ -99,7 +95,6 @@ let task1 _ =
     let count = EnterCount 1
     let sequens = EnterElementsString count
     if count > 0 then
-        printfn "output: %A" (Seq.toList sequens)
         let lenOfElements = sequens |> Seq.map(LenghtofString)
         printfn "len of items in seq: %A" (Seq.toList lenOfElements)
         ExitEnter 1
@@ -115,7 +110,6 @@ let task2 _ =
     printfn "Введите цифру для поиска: "
     let findNum = CheckForNum 1
     if (findNum >= 0)&&(findNum < 10) then
-        printfn "output: %A" (Seq.toList sequens)
         let sum = 
             Seq.fold 
                 (fun acc element-> 
