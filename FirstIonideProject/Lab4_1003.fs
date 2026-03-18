@@ -6,59 +6,57 @@ type 'tree Tree =
 
 let infix root left right = (left(); root(); right())
 
-let iterh trav f t =
-        let rec tr t h =
-            match t with
-            Node (x,l,r) -> trav
-                                (fun () -> (f x h)) // обход корня
-                                (fun () -> tr l (h+1)) // обход левого поддерева
-                                (fun () -> tr r (h+1)); // обход прав. поддерева
+let iterh trav func tree =
+        let rec tr tree high =
+            match tree with
+            Node (value,left,right) -> 
+                            trav
+                                (fun () -> (func value high)) 
+                                (fun () -> tr left (high+1)) 
+                                (fun () -> tr right (high+1)); 
             | Nil -> ()
-        tr t 0
-let spaces n = 
+        tr tree 0
+let spaces num = 
     List.fold 
-        (
-            fun s _ -> s+"  "
-        )
+        (fun str _ -> 
+            str+"  ")
         "" 
-        [0..n]
-let print_tree t = 
+        [0..num]
+let printTree tree = 
     iterh infix 
         (
-            fun x h -> printfn "%s%A" (spaces h)x
+            fun value hight -> 
+                printfn "%s%A" (spaces hight)value
         ) 
-        t
-let rec insert t x =
-        match t with
-            Nil -> Node(x,Nil,Nil)
-            | Node(z,l,r) -> 
-                if x<z then Node(z,insert l x ,r)
-                else Node(z,l,insert r x)
-    //Функция свертки дерева
-let tree_fold f st tree =   
-    let rec ob d k = 
-        match d with
-        | Node (t,l,r) -> ob r (f (ob l k) t)
-        | Nil -> k
-    ob tree st
+        tree
+let rec insert tree value =
+        match tree with
+            Nil -> Node(value,Nil,Nil)
+            | Node(value2,left,right) -> 
+                if value<value2 then 
+                    Node(value2,insert left value ,right)
+                else 
+                    Node(value2,left,insert right value)
 
-let rec map f tree =
+let rec map func tree =
     match tree with
     | Nil -> Nil
-    | Node(v, left, right) -> Node(f v, map f left, map f right)
+    | Node(value, left, right) -> 
+        Node(func value, map func left, map func right)
 
 let firstSymbol (symb: char) (word: string)= 
     string symb + word.[1..]
 
-let rec createWord n str =
-    let r = new Random()
-    if n = 0 then
+let rec createWord num str =
+    let rand = new Random()
+    if num = 0 then
         str
     else
-        let s = str + string (char (r.Next(97,122)))
-        createWord (n-1) s
+        let strOut = str + string (char 
+            (rand.Next(97,122)))
+        createWord (num-1) strOut
 
-let CheckForNum _=
+let checkForNum _=
     try 
         let count = int (Console.ReadLine())
         count
@@ -67,7 +65,7 @@ let CheckForNum _=
         printfn "Ошибка: %s" ex.Message
         -1
 
-let CharInput _ =
+let charInput _ =
     try
         let inp = char (Console.ReadLine())
         inp
@@ -81,59 +79,60 @@ let addIfLeaf acc node left right =
     | Nil, Nil -> node :: acc  // добавляем только если это лист
     | _ -> acc
 
-let rec leafFold acc tree =
+let rec leafFoldNew acc tree func=
     match tree with
     | Nil -> acc
-    | Node(v, left, right) ->
-        let newAcc = addIfLeaf acc v left right
-        let accFromLeft = leafFold newAcc left
-        leafFold accFromLeft right
-
+    | Node(value, left, right) ->
+        let newAcc = func acc value left right
+        let accFromLeft = leafFoldNew newAcc left func
+        leafFoldNew accFromLeft right func
 let task1 _ =
     printfn "Введите количество элементов: "
-    let n = CheckForNum 1
-    if n < 1 then
+    let num = checkForNum 1
+    if num < 1 then
         printfn "Неверный ввод"
         0
     else
-    let a =
+    let list =
         [
             let str = ""
-            let r = new Random()
-            for i in 1..n do
-                yield createWord (r.Next( 2,10)) str
+            let rand = new Random()
+            for i in 1..num do
+                yield createWord 
+                    (rand.Next( 2,10)) str
         ]
-    printfn "Исходный список %A" a
-    let bt = a |> List.fold insert Nil
-    print_tree bt
+    printfn "Исходный список %A" list
+    let bt = list |> List.fold insert Nil
+    printTree bt
     printfn "Введите символ для замены: "
-    let newSymb = CharInput 1
-    if newSymb = char (0) then 
+    let newSymb = charInput 1
+    if newSymb = char 0 then 
         0
     else
         let newBT = bt |> map (firstSymbol newSymb)
         printfn "Вывод изменённого дерева: "
-        print_tree newBT    
+        printTree newBT    
         0
 
 let task2 _ =
     printfn "Введите количество элементов: "
-    let n = CheckForNum 1
-    if n < 1 then
+    let num = checkForNum 1
+    if num < 1 then
         printfn "Неверный ввод"
         0
     else
-    let a =
+    let list =
         [
             let str = ""
             let r = new Random()
-            for i in 1..n do
-                yield createWord (r.Next( 2,10)) str
+            for i in 1..num do
+                yield createWord 
+                    (r.Next( 2,10)) str
         ]
-    printfn "Исходный список %A" a
-    let bt = a |> List.fold insert Nil
-    print_tree bt
-    let newBT = leafFold [] bt |> List.rev
+    printfn "Исходный список %A" list
+    let bt = list |> List.fold insert Nil
+    printTree bt
+    let newBT = leafFoldNew [] bt addIfLeaf |> List.rev
     printfn "Вывод списка листьев: %A" newBT  
     0
 

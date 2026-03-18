@@ -59,3 +59,18 @@ let body args =
     //BT |> tree_fold sum 0 |> printfn "Сумма элементов дерева %A"
     0
 
+
+
+
+
+
+
+
+
+    //Функция свертки дерева
+let tree_fold func st root =   
+    let rec bypass tree k = 
+        match tree with
+        | Node (value,left,right) -> bypass right (func (bypass left k) value)
+        | Nil -> k
+    bypass root st
