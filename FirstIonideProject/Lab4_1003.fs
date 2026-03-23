@@ -79,13 +79,13 @@ let addIfLeaf acc node left right =
     | Nil, Nil -> node :: acc  // добавляем только если это лист
     | _ -> acc
 
-let rec leafFoldNew acc tree func=
+let rec leafFoldNew func acc tree =
     match tree with
     | Nil -> acc
     | Node(value, left, right) ->
         let newAcc = func acc value left right
-        let accFromLeft = leafFoldNew newAcc left func
-        leafFoldNew accFromLeft right func
+        let accFromLeft = leafFoldNew func newAcc left 
+        leafFoldNew func accFromLeft right 
 let task1 _ =
     printfn "Введите количество элементов: "
     let num = checkForNum 1
@@ -132,7 +132,7 @@ let task2 _ =
     printfn "Исходный список %A" list
     let bt = list |> List.fold insert Nil
     printTree bt
-    let newBT = leafFoldNew [] bt addIfLeaf |> List.rev
+    let newBT = leafFoldNew addIfLeaf  [] bt |> List.rev
     printfn "Вывод списка листьев: %A" newBT  
     0
 
