@@ -19,7 +19,15 @@ solution([A,N,V,G,D]) :-
 	% Если V присутствует, а N отсутствует, то D должен отсутствовать,
 	% а G должен прийти
 	( N = no, V = yes -> (D = no, G = yes) ; true ).
+outLists([],[]).
+outLists([Head1|Tail1],[Head2|Tail2]):-
+	write(Head1),
+	write(" - "),
+	write(Head2),nl,
+	outLists(Tail1,Tail2).
+
 
 main :-
 	solution(List),
-	write(List).
+	outLists(['Андрей','Николай','Виктор','Григорий','Дмитрий'],List),nl.
+	

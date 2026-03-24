@@ -1,6 +1,6 @@
 :- initialization(main,main).
-%Couples
-isDigitEndsBySymbol([],_,Count):-write(Count).
+%Функция обрабатывает список с элементом и выводит количество
+isDigitEndsBySymbol([],_,Count):-write(Count),nl.
 isDigitEndsBySymbol([Head|Tail],Symbol,Count):-
 	Digit is Head mod 10,
 	Digit=:=Symbol,
@@ -24,7 +24,7 @@ main :-
 	write('Введите количество элементов:'),
         read(Count),
         readElements(List,Count),
-	write("Ваш список: "),write(List),
+	write("Ваш список: "),write(List),nl,
 	write("Введите цифру для поиска: "), read(Numero),
 	write("Количество эелементов заканчивающихся на "), write(Numero),write(':'),
 	isDigitEndsBySymbol(List,Numero,0).	

@@ -1,16 +1,18 @@
 :- initialization(main,main).
 :- discontiguous listSubstraction/3.
-%Couples
-%Функция вычитания
-listSubstraction([],_,[]):-!.
-listSubstruct([Head|Tail],List2,ListOut) :-
+%Функция вычитает список из другого, элементы уникальны
+listdel(List1,List2,ListOut):-
+	listSubstraction(List1,List2,List3),
+	listdel(List3,List2,ListOut)
+listSubstraction([],_,[]).
+listSubstruction([Head|Tail],List2,ListOut) :-
 	member(Head,List2), !,
 	listSubstraction(Tail,List2,ListOut).
 listSubstraction([Head|Tail],List2, [Head|ListOut]):-
 	listSubstraction(Tail,List2,ListOut).
 %Функция ввода списка
 readElements(ListN,Count) :-
-        writeln('Вводите элементы:'),
+        writeln('Вводите уникальные элементы:'),
         whileCount(ListN,Count).
 whileCount([],0).
 whileCount([Input|Tail],Count) :-
@@ -27,5 +29,5 @@ main :-
 	write("Введите количество элементов второго списка:"),
 	read(Count2),
 	readElements(List2, Count2),
-	listSubstruct(List1,List2,ListOut),
+	listSubstruction(List1,List2,ListOut),
 	write(ListOut).
