@@ -1,15 +1,12 @@
 :- initialization(main,main).
-:- discontiguous listSubstraction/3.
 %Функция вычитает список из другого, элементы уникальны
-listdel(List1,List2,ListOut):-
-	listSubstraction(List1,List2,List3),
-	listdel(List3,List2,ListOut)
-listSubstraction([],_,[]).
-listSubstruction([Head|Tail],List2,ListOut) :-
-	member(Head,List2), !,
-	listSubstraction(Tail,List2,ListOut).
-listSubstraction([Head|Tail],List2, [Head|ListOut]):-
-	listSubstraction(Tail,List2,ListOut).
+subL([],_,Lilo,Lilo).
+subL([Head|Tail],List2,ListOut,Lilo):-
+	(member(Head,List2) 
+	-> subL(Tail,List2,ListOut,Lilo)
+	; subL(Tail,List2,[Head|ListOut],Lilo)).
+
+
 %Функция ввода списка
 readElements(ListN,Count) :-
         writeln('Вводите уникальные элементы:'),
@@ -21,13 +18,14 @@ whileCount([Input|Tail],Count) :-
         whileCount(Tail,Count1).
 %Главная функция
 main :-
-        write("Введите длину списков натуральными числами"),nl,
-        write("Не забудьте точку после введённого числа!"),nl,
-        write("Введите количество элементов первого списка:"),
-        read(Count1),
+    write("Введите длину списков натуральными числами"),nl,
+    write("Не забудьте точку после введённого числа!"),nl,
+    write("Введите количество элементов первого списка:"),
+    read(Count1),
 	readElements(List1, Count1),
 	write("Введите количество элементов второго списка:"),
 	read(Count2),
 	readElements(List2, Count2),
-	listSubstruction(List1,List2,ListOut),
-	write(ListOut).
+	subL(List1,List2,[],Ll),
+	writeln("Результат вычитания:"),
+	write(Ll),nl.

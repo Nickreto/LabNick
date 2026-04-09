@@ -1,0 +1,15 @@
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/bin/Debug/net10.0/MainEnvironment
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/bin/Debug/net10.0/MainEnvironment.deps.json
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/bin/Debug/net10.0/MainEnvironment.runtimeconfig.json
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/bin/Debug/net10.0/MainEnvironment.dll
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/bin/Debug/net10.0/MainEnvironment.pdb
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/obj/Debug/net10.0/MainEnvironment.GeneratedMSBuildEditorConfig.editorconfig
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/obj/Debug/net10.0/MainEnvironment.AssemblyInfoInputs.cache
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/obj/Debug/net10.0/MainEnvironment.AssemblyInfo.cs
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/obj/Debug/net10.0/MainEnvironment.csproj.CoreCompileInputs.cache
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/obj/Debug/net10.0/MainEnvironment.sourcelink.json
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/obj/Debug/net10.0/MainEnvironment.dll
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/obj/Debug/net10.0/refint/MainEnvironment.dll
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/obj/Debug/net10.0/MainEnvironment.pdb
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/obj/Debug/net10.0/MainEnvironment.genruntimeconfig.cache
+/home/nick/Документы/4_sem/LP/LabNick/MainEnvironment/obj/Debug/net10.0/ref/MainEnvironment.dll

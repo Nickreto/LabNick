@@ -1,0 +1,15 @@
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/bin/Debug/net10.0/Lab6Task1
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/bin/Debug/net10.0/Lab6Task1.deps.json
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/bin/Debug/net10.0/Lab6Task1.runtimeconfig.json
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/bin/Debug/net10.0/Lab6Task1.dll
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/bin/Debug/net10.0/Lab6Task1.pdb
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/obj/Debug/net10.0/Lab6Task1.GeneratedMSBuildEditorConfig.editorconfig
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/obj/Debug/net10.0/Lab6Task1.AssemblyInfoInputs.cache
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/obj/Debug/net10.0/Lab6Task1.AssemblyInfo.cs
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/obj/Debug/net10.0/Lab6Task1.csproj.CoreCompileInputs.cache
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/obj/Debug/net10.0/Lab6Task1.sourcelink.json
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/obj/Debug/net10.0/Lab6Task1.dll
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/obj/Debug/net10.0/refint/Lab6Task1.dll
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/obj/Debug/net10.0/Lab6Task1.pdb
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/obj/Debug/net10.0/Lab6Task1.genruntimeconfig.cache
+/home/nick/Документы/4_sem/LP/LabNick/Lab6Task1/obj/Debug/net10.0/ref/Lab6Task1.dll
