@@ -18,19 +18,45 @@ namespace nickEnv
 
         public double X
         {
-            get{return this._x;}
-            set{this._x=value;}
+            get
+            {
+                return _x;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    _x=value;
+                }
+                else
+                {
+                    Console.WriteLine("Сторона должна быть больше нуля");
+                }
+            }
         }
         public double Y
         {
-            get{return this._y;}
-            set{this._y=value;}
+            get
+            {
+                return _y;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    _y=value;
+                }
+                else
+                {
+                    Console.WriteLine("Сторона должна быть больше нуля");
+                }
+            }
         }
 
 
         public double Square()
         {
-            return Math.Abs(this._x*this._y/2);
+            return Math.Abs(_x*_y/2);
         }
 
         public static RightTriangle operator ++(RightTriangle triangle)
@@ -47,12 +73,12 @@ namespace nickEnv
 
         public static bool operator >=(RightTriangle triangle1, RightTriangle triangle2)
         {
-            return (triangle1.Square()>=triangle2.Square());
+            return triangle1.Square()>=triangle2.Square();
         }
 
         public static bool operator <=(RightTriangle triangle1, RightTriangle triangle2)
         {
-            return (triangle1.Square()<=triangle2.Square());
+            return triangle1.Square()<=triangle2.Square();
         }
 
         public static explicit operator double(RightTriangle triangle)
