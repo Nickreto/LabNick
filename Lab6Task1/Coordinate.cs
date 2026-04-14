@@ -13,11 +13,11 @@ namespace nickEnv
             _z = 0;
         }
 
-        public Coordinate(int _x,int _y, int _z)
+        public Coordinate(int x,int y, int z)
         {
-            this._x = _x;
-            this._y = _y;
-            this._z = _z;
+            this._x = x;
+            this._y = y;
+            this._z = z;
         }
 
         public Coordinate(Coordinate obj)
