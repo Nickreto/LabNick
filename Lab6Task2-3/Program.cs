@@ -2,28 +2,17 @@
 internal class Program
 {
 
-    private static double EnterDouble()
-    {
-        double enteredDouble;
-        Console.Write("Введите число:");
-        while(!double.TryParse(Console.ReadLine(), out enteredDouble))
-        {
-            Console.Write("Ввод некорректен, повторите ввод: ");
-        }        
-        Console.WriteLine(enteredDouble);
-        return enteredDouble; 
-    }
     private static void Main(string[] args)
     {
         RightTriangle triangle1 = new RightTriangle();
         Console.WriteLine("Введите X: ");
-        triangle1.X = EnterDouble();
+        triangle1.X = Checker.EnterDouble();
         Console.WriteLine("Введите Y: ");
-        triangle1.Y = EnterDouble();
+        triangle1.Y = Checker.EnterDouble();
         Console.WriteLine("Введите X: ");
-        double x = EnterDouble();
+        double x = Checker.EnterDouble();
         Console.WriteLine("Введите Y: ");
-        double y = EnterDouble();
+        double y = Checker.EnterDouble();
         RightTriangle triangle2 = new RightTriangle(x,y);
         Console.WriteLine("Метод вычисления площади:");
         Console.WriteLine(triangle2.Square());
