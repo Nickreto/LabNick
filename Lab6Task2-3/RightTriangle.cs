@@ -7,13 +7,14 @@ namespace nickEnv
 
         public RightTriangle()
         {
-            
+            this._x = 0;
+            this._y = 0;
         }
 
         public RightTriangle(double _x, double _y)
         {
-            this._x = _x;
-            this._y = _y;
+            this.X = _x;
+            this.Y = _y;
         }
 
         public double X
@@ -31,6 +32,7 @@ namespace nickEnv
                 else
                 {
                     Console.WriteLine("Сторона должна быть больше нуля");
+                    _x =0;
                 }
             }
         }
@@ -49,6 +51,7 @@ namespace nickEnv
                 else
                 {
                     Console.WriteLine("Сторона должна быть больше нуля");
+                    _y=0;
                 }
             }
         }

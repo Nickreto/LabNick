@@ -1,0 +1,15 @@
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/bin/Debug/net10.0/Lab7Task1-5
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/bin/Debug/net10.0/Lab7Task1-5.deps.json
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/bin/Debug/net10.0/Lab7Task1-5.runtimeconfig.json
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/bin/Debug/net10.0/Lab7Task1-5.dll
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/bin/Debug/net10.0/Lab7Task1-5.pdb
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/obj/Debug/net10.0/Lab7Task1-5.GeneratedMSBuildEditorConfig.editorconfig
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/obj/Debug/net10.0/Lab7Task1-5.AssemblyInfoInputs.cache
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/obj/Debug/net10.0/Lab7Task1-5.AssemblyInfo.cs
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/obj/Debug/net10.0/Lab7Task1-5.csproj.CoreCompileInputs.cache
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/obj/Debug/net10.0/Lab7Task1-5.sourcelink.json
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/obj/Debug/net10.0/Lab7Task1-5.dll
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/obj/Debug/net10.0/refint/Lab7Task1-5.dll
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/obj/Debug/net10.0/Lab7Task1-5.pdb
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/obj/Debug/net10.0/Lab7Task1-5.genruntimeconfig.cache
+/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/obj/Debug/net10.0/ref/Lab7Task1-5.dll

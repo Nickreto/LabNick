@@ -10,7 +10,7 @@ namespace nickEnv
         {
             Console.Write("Ввод некорректен, повторите ввод: ");
         }        
-        Console.WriteLine(enteredDouble);
+        //Console.WriteLine(enteredDouble);
         return enteredDouble; 
     }
 
@@ -22,21 +22,45 @@ namespace nickEnv
         {
             Console.Write("Ввод некорректен, повторите ввод: ");
         }        
-        Console.WriteLine(enteredInt);
+        //Console.WriteLine(enteredInt);
         return enteredInt; 
     }
 
     public static char EnterChar()
     {
         char enteredChar;
-        Console.Write("Введите число:");
+        Console.Write("Введите символ:");
         while(!char.TryParse(Console.ReadLine(), out enteredChar))
         {
             Console.Write("Ввод некорректен, повторите ввод: ");
         }        
-        Console.WriteLine(enteredChar);
+        //Console.WriteLine(enteredChar);
         return enteredChar; 
     }
+
+    public static string EnterString()
+    {
+        string enteredString;
+        Console.Write("Введите строку:");
+        while((enteredString = Console.ReadLine()) == "")
+        {
+            Console.Write("Ввод некорректен, повторите ввод: ");
+        }        
+        //Console.WriteLine(enteredChar);
+        return enteredString; 
+    }
+
+
+//    public static T Enter<T>()
+//    {
+//        T entered;
+//        Console.Write("Введите символ:");
+//        while((Console.ReadLine()) != "")
+//        {
+//            Console.Write("Ввод некорректен, повторите ввод: ");
+//        }        
+//        return null;
+//    }
 
     }
 }
