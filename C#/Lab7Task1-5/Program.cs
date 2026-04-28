@@ -18,7 +18,7 @@ internal class Program
         Console.WriteLine("Task4:");
         FileOperator.Task4File("/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/task4");
         Console.WriteLine(FileOperator.BinEquals("/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/task4"));
-        FileOperator.Task5File("/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/task5");
-        FileOperator.OutBuggage("/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/task5");
+        FileOperator.Task5File("/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/task5.xml");
+        FileOperator.OutBuggage("/home/nick/Документы/4_sem/LP/LabNick/C#/Lab7Task1-5/task5.xml");
     }
 }

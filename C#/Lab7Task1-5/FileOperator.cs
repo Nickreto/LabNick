@@ -112,7 +112,7 @@ namespace nickEnv
             File.WriteAllText(path,line);
         }
 
-        public static void Task2File(string path)
+        public static void Task2File(string path)//по несколько в строке
         {
             Random rand = new Random();
             int i = rand.Next(1,100);
@@ -207,7 +207,7 @@ namespace nickEnv
             XmlSerializer serializerXml = new XmlSerializer(typeof(List<Passenger>));
             try 
             {
-                TextWriter writer = new StreamWriter(path);
+                FileStream writer = new FileStream(path, FileMode.Create);
                 serializerXml.Serialize(writer, passengers);
                 Console.WriteLine($"\nДанные успешно сохранены в {path}");
                 writer.Close();

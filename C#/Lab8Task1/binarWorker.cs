@@ -1,0 +1,7 @@
+namespace nickEnv
+{
+    class binarWorker
+    {
+    }
+
+}
