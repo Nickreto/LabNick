@@ -5,7 +5,7 @@ namespace nickEnv
     public static double EnterDouble()
     {
         double enteredDouble;
-        Console.Write("Введите число:");
+        //Console.Write("Введите число:");
         while(!double.TryParse(Console.ReadLine(), out enteredDouble))
         {
             Console.Write("Ввод некорректен, повторите ввод: ");
@@ -17,7 +17,7 @@ namespace nickEnv
     public static int EnterInt()
     {
         int enteredInt;
-        Console.Write("Введите число:");
+        //Console.Write("Введите число:");
         while(!int.TryParse(Console.ReadLine(), out enteredInt))
         {
             Console.Write("Ввод некорректен, повторите ввод: ");
@@ -29,7 +29,7 @@ namespace nickEnv
     public static char EnterChar()
     {
         char enteredChar;
-        Console.Write("Введите символ:");
+        //Console.Write("Введите символ:");
         while(!char.TryParse(Console.ReadLine(), out enteredChar))
         {
             Console.Write("Ввод некорректен, повторите ввод: ");
